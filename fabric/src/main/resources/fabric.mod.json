@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "ctl",
+  "version": "${version}",
+
+  "name": "Custom TNT Lib",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.abhinav.ctl.ctl.fabric.CustomTNTLibFabric"
+    ]
+  },
+  "mixins": [
+    "ctl.mixins.json",
+    "ctl-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.10",
+    "minecraft": ">=1.20.1"
+  }
+}
