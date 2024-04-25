@@ -19,10 +19,6 @@ base {
     archivesName.set(baseArchivesName)
 }
 
-dependencyProjects.forEach {
-    project.evaluationDependsOn(it.path)
-}
-
 minecraft {
     version(minecraftVersion)
     // no runs are configured for Common
@@ -41,9 +37,6 @@ dependencies {
         name = "mixin",
         version = "0.8.5"
     )
-    dependencyProjects.forEach {
-        implementation(it)
-    }
     testImplementation(
         group = "org.junit.jupiter",
         name = "junit-jupiter-api",
@@ -79,32 +72,6 @@ tasks.withType<JavaCompile> {
     javaToolchains {
         compilerFor {
             languageVersion.set(JavaLanguageVersion.of(modJavaVersion))
-        }
-    }
-}
-
-publishing {
-    publications {
-        register<MavenPublication>("commonJar") {
-            artifactId = base.archivesName.get()
-            artifact(tasks.jar)
-            artifact(tasks.named("sourcesJar"))
-
-            pom.withXml {
-                val dependenciesNode = asNode().appendNode("dependencies")
-                dependencyProjects.forEach {
-                    val dependencyNode = dependenciesNode.appendNode("dependency")
-                    dependencyNode.appendNode("groupId", it.group)
-                    dependencyNode.appendNode("artifactId", it.base.archivesName.get())
-                    dependencyNode.appendNode("version", it.version)
-                }
-            }
-        }
-    }
-    repositories {
-        val deployDir = project.findProperty("DEPLOY_DIR")
-        if (deployDir != null) {
-            maven(deployDir)
         }
     }
 }
