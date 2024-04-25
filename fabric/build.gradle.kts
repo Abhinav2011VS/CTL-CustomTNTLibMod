@@ -125,8 +125,6 @@ loom {
             vmArgs("-Dfabric.classPathGroups=${classPathGroupsString}")
         }
     }
-
-    accessWidenerPath.set(file("src/main/resources/ctl.accesswidener"))
 }
 
 sourceSets {
