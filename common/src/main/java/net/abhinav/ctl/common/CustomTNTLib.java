@@ -1,4 +1,4 @@
-package net.abhinav.ctl.ctl;
+package net.abhinav.ctl.common;
 
 public class CustomTNTLib
 {

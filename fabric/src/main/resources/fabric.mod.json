@@ -1,28 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "ctl",
+  "id": "${modId}",
   "version": "${version}",
 
-  "name": "Custom TNT Lib",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "name": "${modName}",
+  "description": "${modDescription}",
+  "authors": [
+    "${modAuthor}"
+  ],
+  "contact": {
+    "homepage": "${websiteUrl}",
+    "sources": "${githubUrl}"
+  },
 
-  "license": "MIT",
-  "icon": "icon.png",
+  "license": "The MIT License (MIT)",
+  "icon": "ctl-icon.png",
 
   "environment": "*",
-  "entrypoints": {
-    "main": [
-      "net.abhinav.ctl.ctl.fabric.CustomTNTLibFabric"
-    ]
-  },
-  "mixins": [
-    "ctl.mixins.json",
-    "ctl-common.mixins.json"
-  ],
+
   "depends": {
-    "fabricloader": ">=0.15.10",
-    "minecraft": ">=1.20.1"
+    "fabricloader": ">=${fabricLoaderVersion}",
+    "fabric-api": ">=${fabricApiVersion}",
+    "java": ">=${modJavaVersion}"
   }
 }

@@ -14,7 +14,7 @@ pluginManagement {
         exclusiveMaven("https://maven.fabricmc.net/") {
             includeGroup("net.fabricmc")
             includeGroup("fabric-loom")
-        }\
+        }
         exclusiveMaven("https://repo.spongepowered.org/repository/maven-public/") {
             includeGroupByRegex("org\\.spongepowered.*")
         }
@@ -36,6 +36,7 @@ val minecraftVersion: String by settings
 
 rootProject.name = "ctl-${minecraftVersion}"
 include(
+    "Changelog",
     "Common",
     "Forge",
     "Fabric"

@@ -16,6 +16,7 @@ val fabricLoaderVersion: String by extra
 val forgeVersion: String by extra
 val forgeVersionRange: String by extra
 val githubUrl: String by extra
+val websiteUrl: String by extra
 val loaderVersionRange: String by extra
 val parchmentVersionForge: String by extra
 val minecraftVersion: String by extra
